@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title id="title"></title>
+    <link rel="stylesheet" href="css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="css/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body class="bg-gray-50">
+    $(if advert-pending == 'yes') onLoad="openAdvert()" $(endif)
+    <div class="max-w-md mx-auto pb-10">
+      <!-- Header -->
+      <div class="bg-red-600 p-2 px-4 rounded-none md:rounded-t-lg">
+        <!-- Logo -->
+        <div class="flex justify-between mt-2 text-white">
+          <div class="flex justify-center">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="h-6 w-6 mr-2"
+            >
+              <path d="M5 12.55a11 11 0 0 1 14.08 0"></path>
+              <path d="M1.42 9a16 16 0 0 1 21.16 0"></path>
+              <path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path>
+              <line x1="12" y1="20" x2="12.01" y2="20"></line>
+            </svg>
+            <span class="font-bold">TALAGASARI.NET</span>
+          </div>
+          <form
+            action="$(link-login)"
+            name="login"
+            onSubmit="return openLogin()"
+          >
+            <button type="submit" class="relative inline-block mr-2">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="feather feather-log-in bg-green-500"
+              >
+                <path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path>
+                <polyline points="10 17 15 12 10 7"></polyline>
+                <line x1="15" y1="12" x2="3" y2="12"></line>
+              </svg>
+            </button>
+          </form>
+        </div>
+
+        <!-- End Logo -->
+        <!-- Jam -->
+        <div class="flex justify-between items-center py-2 text-white">
+          <div class="flex justify-start items-center">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="w-6 h-6 mr-1"
+            >
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="16" y1="2" x2="16" y2="6"></line>
+              <line x1="8" y1="2" x2="8" y2="6"></line>
+              <line x1="3" y1="10" x2="21" y2="10"></line>
+            </svg>
+            <div class="flex flex-col divide-y">
+              <div id="tglMasehi" class="font-bold text-sm tracking-wide"></div>
+              <div
+                id="tglHijriyah"
+                class="font-bold text-sm tracking-wide"
+              ></div>
+            </div>
+          </div>
+
+          <div class="flex justify-start items-center">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="w-3 h-3 mr-1"
+            >
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
+
+            <div id="jam" class="font-bold text-sm tracking-wide"></div>
+          </div>
+        </div>
+        <!-- End Jam -->
+        <!-- Harga Paket -->
+        <div class="bg-white rounded-lg my-2 mb-6 p-4">
+          <p class="text-center">Terimakasih, Anda berhasil <b>logout</b></p>
+        </div>
+        <!-- End Harga Paket -->
+      </div>
+      <!-- End Header -->
+      <div class="bg-white -mt-4 rounded-t-lg">
+        <svg
+          id="wave"
+          style="transform: rotate(180deg); transition: 0.3s"
+          viewBox="0 0 1440 490"
+          version="1.1"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <defs>
+            <linearGradient id="sw-gradient-0" x1="0" x2="0" y1="1" y2="0">
+              <stop stop-color="rgba(217.75, 0, 0, 1)" offset="0%"></stop>
+              <stop stop-color="rgba(255, 175.574, 0, 1)" offset="100%"></stop>
+            </linearGradient>
+          </defs>
+          <path
+            style="transform: translate(0, 0px); opacity: 1"
+            fill="url(#sw-gradient-0)"
+            d="M0,147L20,147C40,147,80,147,120,155.2C160,163,200,180,240,155.2C280,131,320,65,360,49C400,33,440,65,480,106.2C520,147,560,196,600,236.8C640,278,680,310,720,326.7C760,343,800,343,840,310.3C880,278,920,212,960,212.3C1000,212,1040,278,1080,318.5C1120,359,1160,376,1200,343C1240,310,1280,229,1320,236.8C1360,245,1400,343,1440,375.7C1480,408,1520,376,1560,367.5C1600,359,1640,376,1680,326.7C1720,278,1760,163,1800,163.3C1840,163,1880,278,1920,326.7C1960,376,2000,359,2040,351.2C2080,343,2120,343,2160,294C2200,245,2240,147,2280,122.5C2320,98,2360,147,2400,163.3C2440,180,2480,163,2520,204.2C2560,245,2600,343,2640,375.7C2680,408,2720,376,2760,351.2C2800,327,2840,310,2860,302.2L2880,294L2880,490L2860,490C2840,490,2800,490,2760,490C2720,490,2680,490,2640,490C2600,490,2560,490,2520,490C2480,490,2440,490,2400,490C2360,490,2320,490,2280,490C2240,490,2200,490,2160,490C2120,490,2080,490,2040,490C2000,490,1960,490,1920,490C1880,490,1840,490,1800,490C1760,490,1720,490,1680,490C1640,490,1600,490,1560,490C1520,490,1480,490,1440,490C1400,490,1360,490,1320,490C1280,490,1240,490,1200,490C1160,490,1120,490,1080,490C1040,490,1000,490,960,490C920,490,880,490,840,490C800,490,760,490,720,490C680,490,640,490,600,490C560,490,520,490,480,490C440,490,400,490,360,490C320,490,280,490,240,490C200,490,160,490,120,490C80,490,40,490,20,490L0,490Z"
+          ></path>
+        </svg>
+        <!-- Status Info -->
+        <div class="pt-5">
+          <p class="text-center font-bold">Info Status</p>
+        </div>
+        <div class="overflow-x-auto p-3">
+          <table class="table-auto w-full">
+            <tbody class="text-sm divide-y divide-gray-100">
+              <!-- IP Address-->
+              <tr>
+                <td class="p-2">
+                  <div class="font-medium text-gray-800">IP Address</div>
+                </td>
+                <td class="p-2">
+                  <div class="text-left font-medium text-green-500">$(ip)</div>
+                </td>
+              </tr>
+              <!-- MAC Address-->
+              <tr>
+                <td class="p-2">
+                  <div class="font-medium text-gray-800">MAC Address</div>
+                </td>
+                <td class="p-2">
+                  <div class="text-left font-medium text-green-500">$(mac)</div>
+                </td>
+              </tr>
+              <!-- Traffic -->
+              <tr>
+                <td class="p-2">
+                  <div class="font-medium text-gray-800">Upload/Download</div>
+                </td>
+                <td class="p-2">
+                  <div class="text-left font-medium text-green-500">
+                    $(bytes-in-nice) | $(bytes-out-nice)
+                  </div>
+                </td>
+              </tr>
+              <!-- Aktif-->
+              <tr>
+                <td class="p-2">
+                  <div class="font-medium text-gray-800">Waktu Aktif</div>
+                </td>
+                <td class="p-2">
+                  <div class="text-left font-medium text-green-500">
+                    $(uptime)
+                  </div>
+                </td>
+              </tr>
+              <!-- Traffic Address-->
+
+              $(if remain-bytes-total)
+              <tr>
+                <td class="p-2">
+                  <div class="font-medium text-gray-800">Sisa Kuota</div>
+                </td>
+                <td class="p-2">
+                  <div class="text-left font-medium text-green-500">
+                    $(remain-bytes-total-nice)
+                  </div>
+                </td>
+              </tr>
+              $(endif) $(if session-time-left)
+              <tr>
+                <td class="p-2">
+                  <div class="font-medium text-gray-800">Masa Aktif</div>
+                </td>
+                <td class="p-2">
+                  <div class="text-left font-medium text-green-500">
+                    $(session-time-left)
+                  </div>
+                </td>
+              </tr>
+              $(endif) $(if blocked == 'yes')
+              <tr>
+                <td class="p-2">
+                  <div class="font-medium text-gray-800">Ads</div>
+                </td>
+                <td class="p-2">
+                  <div class="text-left font-medium text-green-500">
+                    <a href="$(link-advert)" target="hotspot_advert"
+                      >advertisement</a
+                    >
+                  </div>
+                </td>
+              </tr>
+              $(elif refresh-timeout)
+              <tr>
+                <td class="p-2">
+                  <div class="font-medium text-gray-800">Refresh</div>
+                </td>
+                <td class="p-2">
+                  <div class="text-left font-medium text-green-500">
+                    $(refresh-timeout)
+                  </div>
+                </td>
+              </tr>
+              $(endif)
+            </tbody>
+          </table>
+        </div>
+        <div class="text-center">
+          <form
+            action="$(link-login)"
+            name="login"
+            onSubmit="return openLogin()"
+          >
+            <button
+              class="p-2 w-1/2 font-medium bg-red-600 rounded-lg my-2 text-white"
+            >
+              <span class="font-bold">Masuk</span> |
+              <span class="font-bold">Login</span>
+            </button>
+          </form>
+        </div>
+
+        <!-- End Status Info -->
+        <div class="mx-4 my-2">
+          <h1 class="font-bold tracking-wide text-sm">
+            Ada kendala? Hubungi kami
+          </h1>
+        </div>
+        <!-- Slider Menu -->
+        <div
+          id="menu-carousel"
+          class="owl-carousel owl-theme h-20 rounded-lg mx-4"
+        >
+          <div class="item rounded-lg">
+            <a
+              href="https://wa.me/6281210489840?text=Saya%20Membutuhkan%20Bantuan%20Untuk%20Login%20*Talagasari.net*."
+              class="bg-transparent rounded-lg"
+            >
+              <div class="flex flex-col items-center p-2">
+                <!-- Icons -->
+                <div class="h-10 w-10">
+                  <img src="img/whatsapp.png" alt="" />
+                </div>
+                <!-- Text -->
+                <div>
+                  <p
+                    class="text-xs -leading-1 font-medium text-center tracking-tight mt-1"
+                  >
+                    Whatsapp
+                  </p>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="item rounded-lg">
+            <a href="https://t.me/galihgaluh">
+              <div class="bg-transparent rounded-lg">
+                <div class="flex flex-col items-center p-2">
+                  <!-- Icons -->
+                  <div class="h-10 w-10">
+                    <img src="img/telegram.png" alt="" />
+                  </div>
+                  <!-- Text -->
+                  <div>
+                    <p
+                      class="text-xs -leading-6 font-medium text-center tracking-tight mt-1"
+                    >
+                      Telegram
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+        <!-- End Slider Menu -->
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div
+      class="p-1 bottom-3 max-w-xs mx-auto rounded-lg text-center bg-red-600 text-white sticky z-30 shadow-lg"
+    >
+      <!-- Ubah Teks Pembelian -->
+      <marquee class="text-md"
+        >Untuk pembelian voucher atau berlangganan member dapat melalui
+        <b>Talagasari.net</b></marquee
+      >
+      <!-- End Ubah Teks Pembelian -->
+
+      <!-- Tolong Jangan dirubah ya :) -->
+      <footer class="text-sm -mt-2">
+        dibuat oleh
+        <a href="#" class="font-bold">Cp_Sjt</a>
+      </footer>
+    </div>
+    <!-- End Footer -->
+
+    <script type="text/javascript" src="login_js/jquery.js"></script>
+    <script type="text/javascript" src="login_js/owl.carousel.min.js"></script>
+
+    <script type="text/javascript" src="login_js/main.js"></script>
+    <script src="login_js/datehijri.js"></script>
+    <script>
+      window.MSInputMethodContext &&
+        document.documentMode &&
+        document.write(
+          '<script src="login_js/ie11CustomProperties.min.js"><\/script>'
+        );
+    </script>
+    <script>
+      $("#menu-carousel").owlCarousel({
+        items: 5,
+        loop: true,
+        margin: 10,
+        autoplay: true,
+        autoplayTimeout: 3000,
+        autoplayHoverPause: true,
+        dots: false,
+      });
+    </script>
+    <script type="text/javascript">
+      document.getElementById("title").innerHTML =
+        window.location.hostname + " > logout";
+    </script>
+  </body>
+</html>
