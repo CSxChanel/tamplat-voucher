@@ -1,20 +1,22 @@
 {
-  "name": "TEMPLATE VOUCHER",
-  "short_name": "Voucher",
-  "icons": [
-    {
-      "src": "img/icon.webp",
-      "sizes": "192x192",
-      "type": "image/webp"
-    },
-    {
-      "src": "img/icon.webp",
-      "sizes": "512x512",
-      "type": "image/webp"
-    }
-  ],
-  "start_url": "/index.html",
-  "display": "standalone",
-  "theme_color": "#ffffff",
-  "background_color": "#ffffff"
+    "name": "Tampat Voucher",
+    "short_name": "Voucher",
+    "description": "Aplikasi untuk menampilkan voucher digital.",
+    "start_url": "/tamplat-voucher/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#007bff",
+    "icons": [
+        {
+            "src": "/tamplat-voucher/img/icon.png",
+            "sizes": "192x192",
+            "type": "image/webp"
+        },
+        {
+            "src": "/tamplat-voucher/img/icon2.png",
+            "sizes": "512x512",
+            "type": "image/webp",
+            "purpose": "maskable"
+        }
+    ]
 }
