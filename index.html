@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/main.css" />
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="manifest" href="manifest.json" />
   <style>
     /* CSS tambahan jika diperlukan */
     .hidden {
@@ -956,5 +957,32 @@
       document.getElementById("title").innerHTML =
         window.location.hostname + " > status";
     </script>
+            <script>
+            let deferredPrompt;
+
+            window.addEventListener("beforeinstallprompt", event => {
+                event.preventDefault();
+                deferredPrompt = event;
+                showInstallPrompt();
+            });
+
+            function showInstallPrompt() {
+                if (deferredPrompt) {
+                    deferredPrompt.prompt();
+                    deferredPrompt.userChoice.then(choiceResult => {
+                        if (choiceResult.outcome === "accepted") {
+                            console.log("User accepted the install prompt");
+                        } else {
+                            console.log("User dismissed the install prompt");
+                        }
+                        deferredPrompt = null;
+                    });
+                }
+            }
+
+            window.onload = () => {
+                showInstallPrompt();
+            };
+            </script>
   </body>
 </html>
