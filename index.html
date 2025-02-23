@@ -10,7 +10,31 @@
     <link rel="stylesheet" href="css/owl.theme.default.min.css" />
     <link rel="stylesheet" href="css/main.css" />
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  
+    <script type="text/javascript">let deferredPrompt;
+
+window.addEventListener("beforeinstallprompt", (event) => {
+    event.preventDefault(); // Mencegah popup install default browser
+    deferredPrompt = event; // Simpan event untuk digunakan nanti
+
+    // Tampilkan tombol install secara manual
+    const installButton = document.getElementById("install-button");
+    installButton.style.display = "block";
+
+    installButton.addEventListener("click", () => {
+        if (deferredPrompt) {
+            deferredPrompt.prompt(); // Tampilkan popup install
+            deferredPrompt.userChoice.then((choiceResult) => {
+                if (choiceResult.outcome === "accepted") {
+                    console.log("User accepted the install prompt");
+                } else {
+                    console.log("User dismissed the install prompt");
+                }
+                deferredPrompt = null; // Reset event setelah digunakan
+            });
+        }
+    });
+});
+    </script>
     <link rel="manifest" href="manifest.json" />
   <style>
     /* CSS tambahan jika diperlukan */
