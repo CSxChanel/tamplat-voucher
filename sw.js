@@ -2,13 +2,15 @@ const CACHE_NAME = "voucher-app-v1";
 const urlsToCache = [
     "/tamplat-voucher/",
     "/tamplat-voucher/index.html",
-    "/tamplat-voucher/css/tailwind.css",
+    "/tamplat-voucher/css/tailwind.min.css",
     "/tamplat-voucher/css/main.css",
     "/tamplat-voucher/img/icon.webp",
     "/tamplat-voucher/img/icon2.webp",
     "/tamplat-voucher/manifest.json",
-    "/tamplat-voucher/main-js/jam.js",
-    "/tamplat-voucher/main-js/main.js"
+    "/tamplat-voucher/login_js/owl.carousel.min.js",
+    "/tamplat-voucher/login_js/owl.carousel.js",
+    "/tamplat-voucher/login_js/datehijri.js",
+    "/tamplat-voucher/login_js/main.js"
 ];
 
 // Install Service Worker
