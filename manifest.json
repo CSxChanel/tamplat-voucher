@@ -1,20 +1,20 @@
 {
-  "short_name": "Hotspot",
-  "name": "Hotspot Login",
+  "name": "TEMPLATE VOUCHER",
+  "short_name": "Voucher",
   "icons": [
     {
-      "src": "icon-192x192.png",
-      "type": "image/png",
-      "sizes": "192x192"
+      "src": "img/icon.webp",
+      "sizes": "192x192",
+      "type": "image/webp"
     },
     {
-      "src": "icon-512x512.png",
-      "type": "image/png",
-      "sizes": "512x512"
+      "src": "img/icon.webp",
+      "sizes": "512x512",
+      "type": "image/webp"
     }
   ],
-  "start_url": "/",
+  "start_url": "/index.html",
   "display": "standalone",
-  "background_color": "#3B5998",
-  "theme_color": "#3B5998"
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff"
 }
