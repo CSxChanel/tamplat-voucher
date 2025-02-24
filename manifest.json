@@ -1,6 +1,6 @@
 {
-    "name": "Tampat Voucher",
-    "short_name": "Voucher",
+    "name": "GG-Hotspot",
+    "short_name": "My Voucher",
     "description": "Aplikasi untuk menampilkan voucher digital.",
     "start_url": "/tamplat-voucher/",
     "display": "standalone",
