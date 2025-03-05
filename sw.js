@@ -6,6 +6,12 @@ const urlsToCache = [
     "/tamplat-voucher/css/main.css",
     "/tamplat-voucher/img/icon.webp",
     "/tamplat-voucher/img/icon2.webp",
+    "/tamplat-voucher/img/group.png",
+    "/tamplat-voucher/img/sign-up.png",
+    "/tamplat-voucher/img/unlocked.png",
+    "/tamplat-voucher/img/telegram.png",
+    "/tamplat-voucher/img/whatsapp.png",
+    "/tamplat-voucher/img/qr-code.png"
     "/tamplat-voucher/manifest.json",
     "/tamplat-voucher/login_js/owl.carousel.min.js",
     "/tamplat-voucher/login_js/owl.carousel.js",
