@@ -1,1021 +1,1010 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#dc2626" />
-    <meta http-equiv="Permissions-Policy" content="interest-cohort=()">  
-    
-    <title id="title"></title>
-    <link rel="stylesheet" href="css/owl.carousel.min.css" />
-    <link rel="stylesheet" href="css/owl.theme.default.min.css" />
-    <link rel="stylesheet" href="css/main.css" />
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    
-    <link rel="manifest" href="manifest.json" />
-  <style>
-    /* CSS tambahan jika diperlukan */
-    .hidden {
-      display: none;
-    }
-  </style>
+<!doctype html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+        <meta http-equiv="Permissions-Policy" content="interest-cohort=()" />
+        <meta
+            name="viewport"
+            content="width=device-width; initial-scale=1.0; maximum-scale=1.0;"
+        />
 
-  </head>
-  <body class="bg-gray-50">
-    <button
-            id="install-button"
+        <meta name="theme-color" content="#3B5998" />
+        <title>GG@hotspot</title>
+        <!--         <script src="https://unpkg.com/@tailwindcss/browser@4"></script> -->
+        <link rel="stylesheet" href="css/tailwind.min.css" />
+    </head>
+
+    <body id="dark-mode">
+        <!-- HEADER -->
+        <div class="menubar md:px-10 px-5 py-2 text-white">
+            <div class="flex justify-between mt-2">
+                <div class="flex justify-center">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="h-6 w-6 mr-2"
+                    >
+                        <path d="M5 12.55a11 11 0 0 1 14.08 0"></path>
+                        <path d="M1.42 9a16 16 0 0 1 21.16 0"></path>
+                        <path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path>
+                        <line x1="12" y1="20" x2="12.01" y2="20"></line>
+                    </svg>
+                    <span id="isName" class="font-bold text-2xl"></span>
+                </div>
+                <button
+                    type="button"
+                    class="relative inline-block mr-2 animate-pulse"
+                    onclick="showNotif()"
+                >
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="feather feather-bell"
+                    >
+                        <path
+                            d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"
+                        ></path>
+                        <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                    </svg>
+                </button>
+            </div>
+            <!-- End Logo -->
+            <!-- Jam -->
+            <div class="flex justify-between items-center py-2">
+                <div class="flex justify-start items-center">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="w-6 h-6 mr-1"
+                    >
+                        <rect
+                            x="3"
+                            y="4"
+                            width="18"
+                            height="18"
+                            rx="2"
+                            ry="2"
+                        ></rect>
+                        <line x1="16" y1="2" x2="16" y2="6"></line>
+                        <line x1="8" y1="2" x2="8" y2="6"></line>
+                        <line x1="3" y1="10" x2="21" y2="10"></line>
+                    </svg>
+                    <div class="flex flex-col divide-y">
+                        <div
+                            id="tglMasehi"
+                            class="font-bold text-sm tracking-wide"
+                        ></div>
+                        <div
+                            id="tglHijriyah"
+                            class="font-bold text-sm tracking-wide"
+                        ></div>
+                    </div>
+                </div>
+                <div class="flex justify-start items-center">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="w-3 h-3 mr-1"
+                    >
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <polyline points="12 6 12 12 16 14"></polyline>
+                    </svg>
+                    <div id="jam" class="font-bold text-sm tracking-wide"></div>
+                </div>
+            </div>
+            <!-- End Jam -->
+        </div>
+        <!-- END HEADER -->
+
+        <!-- IMG SLIDER -->
+        <div class="mt-20">
+            <div class="flex overflow-x-auto space-x-2 p-2">
+                <img
+                    class="w-full border shadow-md rounded-b-lg"
+                    src="img/img_3.png"
+                    alt="image1"
+                />
+                <img
+                    class="w-full border shadow-md rounded-b-lg"
+                    src="img/img_2.png"
+                    alt="image2"
+                />
+                <img
+                    class="w-full border shadow-md rounded-b-lg"
+                    src="img/img_1.png"
+                    alt="image3"
+                />
+            </div>
+        </div>
+        <!-- END IMG SLIDER -->
+
+        <!-- BANNER PROMOSI -->
+        <div class="m-4 p-2 border rounded-lg text-center shadow-lg">
+            <marquee class="text-medium font-bold tracking-wide"
+                >PROMO 💥 Biaya Pemasangan VOUCHERAN
+                <span class="text-2xl text-red-600">Rp 250,000.-</span> Langsung
+                Hubungi Nomor di bawah 👇
+                <b class="capitalize text-yellow-500">GG-Voucher</b></marquee
+            >
+            <span class="capitalize text-green-600">
+                📢 WhatsApp |
+                <a
+                    href="https://wa.me/6282213452856?text=Saya%20Membutuhkan%20Bantuan%20Untuk%20Login%20*Contoh.net*."
+                    class="text-medium font-bold"
+                    link="_blank"
+                    >0822-1345-2856</a
+                >
+            </span>
+        </div>
+        <!-- END BANNER PROMOSI -->
+
+        <!-- HILIGHT -->
+        <div class="md:grid md:grid-cols-2 md:gap-4 md:mx-4">
+            <!-- VOUCHERAN -->
+            <div
+                style="border-radius: 18px 18px 0px 0px"
+                class="bg-indigo-500 pt-2 pb-8 md:pb-0 shadow-lg tracking-wide"
+            >
+                <div class="flex justify-between m-2 text-md font-semibold">
+                    <h1>Recomendasi paket</h1>
+                    <p>Voucheran</p>
+                </div>
+                <div
+                    class="grid grid-cols-3 divide-x-2 divide-gray-300 gap-2 p-2"
+                >
+                    <div class="flex flex-col">
+                        <div class="mx-2">
+                            <div
+                                class="flex flex-row w-full justify-start items-center text-yellow-500"
+                            >
+                                <span class="text-xs capitalize font-medium"
+                                    >Basic</span
+                                >
+                            </div>
+                            <h1 class="text-sm font-bold text-white">
+                                Vc Harian
+                            </h1>
+                            <h4 class="font-bold text-yellow-500">
+                                Rp 3,000,-
+                            </h4>
+                        </div>
+                    </div>
+                    <div class="flex flex-col">
+                        <div class="mx-2">
+                            <div
+                                class="flex flex-row w-full justify-start items-center text-yellow-500"
+                            >
+                                <span class="text-xs capitalize font-medium"
+                                    >Silver</span
+                                >
+                            </div>
+                            <h1 class="text-sm font-bold text-white">
+                                Vc Mingguan
+                            </h1>
+                            <h4 class="font-bold text-yellow-500">
+                                Rp 7,000,-
+                            </h4>
+                        </div>
+                    </div>
+                    <div class="flex flex-col">
+                        <div class="mx-2">
+                            <div
+                                class="flex flex-row w-full justify-start items-center text-yellow-500"
+                            >
+                                <span class="text-xs capitalize font-medium"
+                                    >Gold</span
+                                >
+                            </div>
+                            <h1 class="text-sm font-bold text-white">
+                                Vc Bulanan
+                            </h1>
+                            <h4 class="font-bold text-yellow-500">
+                                Rp 50,000,-
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- MENU -->
+            <div
+                style="border-radius: 18px 18px 0px 0px"
+                class="menu hidden bg-indigo-500 shadow-lg tracking-wide"
+            >
+                <div class="flex justify-around py-6">
+                    <div class="mx-auto items-center cursor-pointer">
+                        <button onclick="showMember()">
+                            <div class="h-10 w-10">
+                                <img src="png/group.png" alt="" />
+                            </div>
+
+                            <p
+                                class="text-xs -leading-1 font-medium text-center tracking-tight text-white"
+                            >
+                                Login <br />
+                                member
+                            </p>
+                        </button>
+                    </div>
+
+                    <div
+                        class="spinner mx-auto rounded-full w-16 h-16 cursor-pointer"
+                    >
+                        <button
+                            onclick="myFunction()"
+                            class="rounded-full w-16 h-16"
+                        ></button>
+                    </div>
+
+                    <div class="mx-auto items-center cursor-pointer">
+                        <button onclick="showVoucher()">
+                            <div class="h-10 w-10">
+                                <img src="png/unlocked.png" alt="" />
+                            </div>
+
+                            <p
+                                class="text-xs -leading-1 font-medium text-center tracking-tight text-white"
+                            >
+                                Login <br />
+                                voucher
+                            </p>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END HILIGHT -->
+
+        <div
+            class="hidden"
+            id="alert"
             style="
-                display: none;
+                width: 200px;
+                height: auto;
+                z-index: 9999;
                 position: fixed;
-                bottom: 95px;
-                right: 20px;
+                top: 55px;
+                right: 17px;
                 padding: 10px 20px;
                 background: red;
                 color: white;
-                border: none;
-                border-radius: 5px;
+                border-radius: 25px 0px 25px 5px;
                 cursor: pointer;
             "
         >
-            Install App
-    </button>
-    <div class="max-w-md mx-auto pb-10">
-      <!-- Header -->
-      <div class="bg-red-600 p-2 px-4 rounded-none md:rounded-t-lg">
-        <!-- Logo -->
-        <div class="flex justify-between mt-2 text-white">
-          <div class="flex justify-center">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="h-6 w-6 mr-2"
-            >
-              <path d="M5 12.55a11 11 0 0 1 14.08 0"></path>
-              <path d="M1.42 9a16 16 0 0 1 21.16 0"></path>
-              <path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path>
-              <line x1="12" y1="20" x2="12.01" y2="20"></line>
-            </svg>
-            <span class="font-bold">CONTOH.NET</span>
-          </div>
-          <button
-            type="button"
-            class="relative inline-block mr-2"
-            onclick="showNotif()"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="feather feather-bell"
-            >
-              <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
-              <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
-            </svg>
-            <div
-              class="absolute top-1 right-1 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none transform translate-x-1/2 -translate-y-1/2 bg-green-600 rounded-full w-4 h-4"
-            >
-              1
-            </div>
-          </button>
-          
-        </div>
-
-        <!-- End Logo -->
-        <!-- Jam -->
-        <div class="flex justify-between items-center py-2 text-white">
-          <div class="flex justify-start items-center">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="w-6 h-6 mr-1"
-            >
-              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-              <line x1="16" y1="2" x2="16" y2="6"></line>
-              <line x1="8" y1="2" x2="8" y2="6"></line>
-              <line x1="3" y1="10" x2="21" y2="10"></line>
-            </svg>
-            <div class="flex flex-col divide-y">
-              <div id="tglMasehi" class="font-bold text-sm tracking-wide"></div>
-              <div
-                id="tglHijriyah"
-                class="font-bold text-sm tracking-wide"
-              ></div>
-            </div>
-          </div>
-
-          <div class="flex justify-start items-center">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="w-3 h-3 mr-1"
-            >
-              <circle cx="12" cy="12" r="10"></circle>
-              <polyline points="12 6 12 12 16 14"></polyline>
-            </svg>
-
-            <div id="jam" class="font-bold text-sm tracking-wide"></div>
-          </div>
-        </div>
-        <!-- End Jam -->
-        <!-- Harga Paket -->
-        <div class="bg-white rounded-lg my-2 mb-6">
-          <!-- Harga Paket -->
-          <div class="grid grid-cols-3 divide-x-2 divide-gray-300 gap-2 p-4">
-            <!-- Harga Bronze -->
-            <div class="flex flex-col">
-              <div class="mx-2">
-                <div
-                  class="flex flex-row w-full justify-start items-center text-amber-800"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="h-3 w-3 mr-2"
-                  >
-                    <path d="M5 12.55a11 11 0 0 1 14.08 0"></path>
-                    <path d="M1.42 9a16 16 0 0 1 21.16 0"></path>
-                    <path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path>
-                    <line x1="12" y1="20" x2="12.01" y2="20"></line>
-                  </svg>
-                  <span class="text-xs capitalize font-medium">Bronze</span>
-                </div>
-                <h1 class="text-sm font-bold mt-1">Rp. 5000,-</h1>
-                <h4 class="text-xs text-green-600">Harian</h4>
-              </div>
-            </div>
-            <!-- End Harga Bronze -->
-            <!-- Harga Silver -->
-            <div class="flex flex-col">
-              <div class="mx-2">
-                <div
-                  class="flex flex-row w-full justify-start items-center text-gray-600"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="h-3 w-3 mr-2"
-                  >
-                    <path d="M5 12.55a11 11 0 0 1 14.08 0"></path>
-                    <path d="M1.42 9a16 16 0 0 1 21.16 0"></path>
-                    <path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path>
-                    <line x1="12" y1="20" x2="12.01" y2="20"></line>
-                  </svg>
-                  <span class="text-xs capitalize font-medium">Silver</span>
-                </div>
-                <h1 class="text-sm font-bold mt-1">Rp. 15.000,-</h1>
-                <h4 class="text-xs text-green-600">Mingguan</h4>
-              </div>
-            </div>
-            <!-- End Harga Silver -->
-            <!-- Harga Gold -->
-            <div class="flex flex-col">
-              <div class="mx-2">
-                <div
-                  class="flex flex-row w-full justify-start items-center text-yellow-500"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="h-3 w-3 mr-2"
-                  >
-                    <path d="M5 12.55a11 11 0 0 1 14.08 0"></path>
-                    <path d="M1.42 9a16 16 0 0 1 21.16 0"></path>
-                    <path d="M8.53 16.11a6 6 0 0 1 6.95 0"></path>
-                    <line x1="12" y1="20" x2="12.01" y2="20"></line>
-                  </svg>
-                  <span class="text-xs capitalize font-medium">Gold</span>
-                </div>
-                <h1 class="text-sm font-bold mt-1">Rp. 55.000,-</h1>
-                <h4 class="text-xs text-green-600">Bulanan</h4>
-              </div>
-            </div>
-            <!-- End Harga Gold -->
-          </div>
-        </div>
-      </div>
-      <!-- End Header -->
-      <div class="bg-white -mt-4 rounded-t-lg">
-        <svg
-          id="wave"
-          style="transform: rotate(180deg); transition: 0.3s"
-          viewBox="0 0 1440 490"
-          version="1.1"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <defs>
-            <linearGradient id="sw-gradient-0" x1="0" x2="0" y1="1" y2="0">
-              <stop stop-color="rgba(217.75, 0, 0, 1)" offset="0%"></stop>
-              <stop stop-color="rgba(255, 175.574, 0, 1)" offset="100%"></stop>
-            </linearGradient>
-          </defs>
-          <path
-            style="transform: translate(0, 0px); opacity: 1"
-            fill="url(#sw-gradient-0)"
-            d="M0,147L20,147C40,147,80,147,120,155.2C160,163,200,180,240,155.2C280,131,320,65,360,49C400,33,440,65,480,106.2C520,147,560,196,600,236.8C640,278,680,310,720,326.7C760,343,800,343,840,310.3C880,278,920,212,960,212.3C1000,212,1040,278,1080,318.5C1120,359,1160,376,1200,343C1240,310,1280,229,1320,236.8C1360,245,1400,343,1440,375.7C1480,408,1520,376,1560,367.5C1600,359,1640,376,1680,326.7C1720,278,1760,163,1800,163.3C1840,163,1880,278,1920,326.7C1960,376,2000,359,2040,351.2C2080,343,2120,343,2160,294C2200,245,2240,147,2280,122.5C2320,98,2360,147,2400,163.3C2440,180,2480,163,2520,204.2C2560,245,2600,343,2640,375.7C2680,408,2720,376,2760,351.2C2800,327,2840,310,2860,302.2L2880,294L2880,490L2860,490C2840,490,2800,490,2760,490C2720,490,2680,490,2640,490C2600,490,2560,490,2520,490C2480,490,2440,490,2400,490C2360,490,2320,490,2280,490C2240,490,2200,490,2160,490C2120,490,2080,490,2040,490C2000,490,1960,490,1920,490C1880,490,1840,490,1800,490C1760,490,1720,490,1680,490C1640,490,1600,490,1560,490C1520,490,1480,490,1440,490C1400,490,1360,490,1320,490C1280,490,1240,490,1200,490C1160,490,1120,490,1080,490C1040,490,1000,490,960,490C920,490,880,490,840,490C800,490,760,490,720,490C680,490,640,490,600,490C560,490,520,490,480,490C440,490,400,490,360,490C320,490,280,490,240,490C200,490,160,490,120,490C80,490,40,490,20,490L0,490Z"
-          ></path>
-        </svg>
-      </div>
-
-
-
-<!-- Form Voucher -->
-        <div class="py-6 mx-4 rounded-lg">
-          $(if chap-id)
-          <form
-            autocomplete="off"
-            name="loginvoucher"
-            action="$(link-login-only)"
-            method="post"
-            $(if chap-id)
-            onSubmit="return doLogin()"
-            $(endif)
-          >
-            <div class="bg-white rounded-xl flex items-center justify-between">
-              <input
-                type="text"
-                name="username"
-                required
-                placeholder="Masukkan Voucher"
-                id="kodeVoucher"
-                class="bg-gray-100 py-2 rounded-l-lg text-gray-600 px-4 focus:outline-2 focus:outline-green-500 w-full leading-1 font-bold"
-              />
-              <input type="hidden" name="password" id="password" />
-              <button
-                type="submit"
-                class="py-2 px-4 bg-red-600 text-white rounded-r-xl hover:bg-green-400 active:bg-green-800 disabled:opacity-50 inline-flex items-center focus:outline-none text-medium font-bold leading-1"
-              >
-                Masuk
-              </button>
-            </div>
-            $(if error)
-            <span class="text-sm text-red-800">$(error)</span>
-            $(endif)
-          </form>
-
-          <script src="md5.js"></script>
-          <script type="text/javascript">
-            function doLogin() {
-              document.loginvoucher.username.value = document.login.username.value;
-              document.loginvoucher.password.value = hexMD5("$(chap-id)" + document.login.password.value + "$(chap-challenge)");
-              document.loginvoucher.submit();
-              return false;
-            }
-          </script>
-          $(endif)
-        </div>
-        <!-- End Form Voucher -->
-
-
-
-
-
-
-       <!-- Baner promo -->
-        <div
-          class="p-2 max-w-xs mx-auto rounded-lg text-center bg-red-600 text-white shadow-lg"
-        >
-          
-          
-    
-          <marquee class="text-medium font-bold"
-            >PROMO 💥 Biaya Pemasangan Rp 150,000.- Langsung Hubungi Nomor di
-            bawah 👇
-            <b class="capitalize text-yellow-500">Contoh.net</b></marquee
-          >
-          
-
-          
-          <footer class="capitalize text-green-600">
-            📢 WhatsApp |
-            <a
-              href="https://wa.me/6282213452856?text=Saya%20Membutuhkan%20Bantuan%20Untuk%20Login%20*Contoh.net*."
-              class="text-medium font-bold text-white"
-              >082213452856</a
-            >
-          </footer>
-        </div>
-        <div class="bg-red-600 rounded-lg my-2 mb-6 mx-4">
-          <!-- Harga Paket -->
-          <div class="grid grid-cols-3 divide-x-2 divide-gray-300 gap-2 p-4">
-            <!-- Promo pasang -->
-            <div class="flex flex-col">
-              <div class="mx-2">
-                <div
-                  class="flex flex-row w-full justify-start items-center text-yellow-500"
-                >
-                  <span class="text-xs capitalize font-medium">PROMO</span>
-                </div>
-                <h1 class="text-sm font-bold text-white">Pemasangan</h1>
-                <h4 class="font-bold text-yellow-500">Rp 150,000,-</h4>
-              </div>
-            </div>
-            <!--End Promo pasang-->
-            <!--unlimited-->
-            <div class="flex flex-col">
-              <div class="mx-2">
-                <div
-                  class="flex flex-row w-full justify-start items-center text-yellow-500"
-                >
-                  <span class="text-xs capitalize font-medium">UNLIMITED</span>
-                </div>
-                <h1 class="text-sm font-bold text-white">Up to 100Mbps</h1>
-                <h4 class="font-bold text-yellow-500">All Devices</h4>
-              </div>
-            </div>
-            <!-- End unlimeted -->
-            <!-- fiber -->
-            <div class="flex flex-col">
-              <div class="mx-2">
-                <div
-                  class="flex flex-row w-full justify-start items-center text-yellow-500"
-                >
-                  <span class="text-xs capitalize font-medium"
-                    >MENGGUNAKAN</span
-                  >
-                </div>
-                <h1 class="text-sm font-bold text-white">Fiber Optik</h1>
-                <h4 class="font-bold text-yellow-500">Cepat Stabil</h4>
-              </div>
-            </div>
-            <!-- End fiber -->
-          </div>
-        </div>
-       <!-- End Baner promo -->
-     
-        <!-- Slider -->
-        <div
-          id="owl-carousel"
-          class="owl-carousel owl-theme h-40 rounded-lg px-2.5 mt-16"
-        >
-          <div class="item rounded-lg">
-            <div class="h-40 bg-gray-200 rounded-lg">
-              <img
-                src="img/img_1.png"
-                class="object-center rounded-lg h-40 bg-cover"
-                alt=""
-                srcset=""
-              />
-            </div>
-          </div>
-          <div class="item rounded-lg">
-            <div class="h-40 bg-gray-200 rounded-lg">
-              <img
-                src="img/img_2.png"
-                class="object-center rounded-lg h-40 bg-cover"
-                alt=""
-                srcset=""
-              />
-            </div>
-          </div>
-          <div class="item rounded-lg">
-            <div class="h-40 bg-gray-200 rounded-lg">
-              <img
-                src="img/img_3.png"
-                class="object-center rounded-lg h-40 bg-cover"
-                alt=""
-                srcset=""
-              />
-            </div>
-          </div>
-        </div>
-        <!-- End Slider -->
-
-
-        <div class="mx-4 my-2">
-          <h1 class="font-bold tracking-wide text-sm">
-            Ada kendala? Hubungi kami
-          </h1>
-        </div>
-
-        <!-- Slider sosmed -->
-        <div
-          id="menu-carousel"
-          class="owl-carousel owl-theme h-20 rounded-lg"
-        >
-          <div class="item rounded-lg">
-            <a
-              href="https://wa.me/6282213452856?text=Saya%20ingin%20membuat%20LandingPage%20Login%20seperti%20*Contoh.net*"
-              class="bg-transparent rounded-lg"
-            >
-              <div class="flex flex-col items-center p-2">
-                <!-- Icons -->
-                <div class="h-10 w-10">
-                  <img src="img/whatsapp.png" alt="" />
-                </div>
-                <!-- Text -->
-                <div>
-                  <p
-                    class="text-xs -leading-1 font-medium text-center tracking-tight mt-1"
-                  >
-                    Whatsapp
-                  </p>
-                </div>
-              </div>
-            </a>
-          </div>
-          <div class="item rounded-lg">
-            <a href="https://t.me/csudrajat325">
-              <div class="bg-transparent rounded-lg">
-                <div class="flex flex-col items-center p-2">
-                  <!-- Icons -->
-                  <div class="h-10 w-10">
-                    <img src="img/telegram.png" alt="" />
-                  </div>
-                  <!-- Text -->
-                  <div>
-                    <p
-                      class="text-xs -leading-6 font-medium text-center tracking-tight mt-1"
-                    >
-                      Telegram
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </a>
-          </div>
-        </div>
-        <!-- End Slider sosmed -->
-      </div>
-    </div>
-
-    <!-- Footer -->
-    <div
-      class="p-1 bottom-3 max-w-xs mx-auto rounded-lg text-center bg-red-600 text-white sticky z-10 shadow-lg"
-    >
-      
-      <marquee class="text-md"
-        >Untuk pembelian voucher atau berlangganan member dapat melalui
-        <b>Contoh.net</b></marquee
-      >
-      
-
-      <footer class="text-xs -mt-2">
-                    © Copyright 2024 |
-                    <a href="https://indihome-area.com" class="font-bold">Contoh.net</a>
-                    - All rights reserved
-      </footer>
-    </div>
-    <!-- End Footer -->
-
-
-
-
-    <!-- menu bawah-->
-    <div
-      class="max-w-md fixed bottom-0 mt-16 mx-auto rounded-t-lg text-center text-white sticky z-30 bg-red-600"
-    >
-      <div class="grid grid-cols-3 divide-x-2 divide-gray-300 gap-2 p-4">
-        <!-- member-->
-        <div class="flex flex-col">
-          <div class="mx-2">
-            <div
-              class="flex flex-row w-full justify-start items-center text-amber-800"
-            ></div>
-            <button onclick="showMember()">
-              <div class="h-10 w-10">
-                <img src="img/group.png" alt="" />
-              </div>
-              <div class="mt-1">
-                <p
-                  class="text-xs -leading-1 font-medium text-center tracking-tight text-white"
-                >
-                  Member
-                </p>
-              </div>
-            </button>
-          </div>
-        </div>
-        <!-- End member -->
-
-        <!-- qr-code -->
-        <div class="flex flex-col">
-          <div class="mx-2">
-            <div
-              class="flex flex-row w-full justify-start items-center text-amber-800"
-            ></div>
-            <button onclick="window.location='https://laksa19.github.io/myqr'">
-              <div class="h-10 w-10">
-                <img src="img/qr-code.png" alt="" />
-              </div>
-              <div class="mt-1">
-                <p
-                  class="text-xs -leading-1 font-medium text-center tracking-tight text-white"
-                >
-                  Qr Code
-                </p>
-              </div>
-            </button>
-          </div>
-        </div>
-        <!-- End qr-code -->
-        <!-- cara login -->
-        <div class="flex flex-col">
-          <div class="mx-2">
-            <div
-              class="flex flex-row w-full justify-start items-center text-amber-800"
-            ></div>
-            <button onclick="caraLogin()">
-              <div class="h-10 w-10">
-                <img src="img/unlocked.png" alt="" />
-              </div>
-              <div class="mt-1">
-                <p
-                  class="text-xs -leading-1 font-medium text-center tracking-tight text-white"
-                >
-                  Cara Login
-                </p>
-              </div>
-            </button>
-          </div>
-        </div>
-        <!-- End cara login -->
-      </div>
-    </div>
-    <!-- End menu bawah-->
-
-
-
-<!-- Notification -->
-  <div
-    class="fixed z-20 overflow-y-auto top-0 w-full left-0 hidden"
-    id="notification"
-  >
-    <div
-      class="font-sans antialiased fixed inset-x-0 px-4 pb-4 inset-0 flex items-center justify-center"
-    >
-      <div
-        x-transition:enter="ease-out duration-300"
-        x-transition:enter-start="opacity-0"
-        x-transition:enter-end="opacity-100"
-        x-transition:leave="ease-in duration-200"
-        x-transition:leave-start="opacity-100"
-        x-transition:leave-end="opacity-0"
-        class="fixed inset-0 transition-opacity"
-      >
-        <div class="absolute inset-0 bg-gray-500 opacity-75"></div>
-      </div>
-
-      <div
-        class="bg-white rounded-lg overflow-hidden shadow-xl transform transition-all md:max-w-sm w-full"
-      >
-        <div class="bg-white px-4 pt-5 pb-4 p-6 pb-4">
-          <div
-            class="flex items-center md:items-start flex-col md:flex-row"
-          >
-            <div
-              class="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-green-100 mx-0 h-10 w-10"
-            >
-              <svg
-                class="h-6 w-6 text-red-700"
-                stroke="currentColor"
-                fill="none"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
-                />
-              </svg>
-            </div>
-            <div class="mt-3 mt-0 ml-4 text-left">
-              <h3 class="text-lg font-medium text-gray-900">
-                Harga Paket
-              </h3>
-              <div
-                class="mt-2 text-sm font-medium leading-5 text-white w-full"
-              >
-                <table
-                  class="table-auto border-collapse border border-slate-500"
-                >
-                  <thead>
-                    <tr class="bg-gray-500 text-center">
-                      <th class="p-2 border border-slate-600">Kuota</th>
-                      <th class="p-2 border border-slate-600">
-                        Masa Aktif
-                      </th>
-                      <th class="p-2 border border-slate-600">Harga</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr class="bg-red-500 text-left">
-                      <td class="p-2 border border-slate-600">
-                        Unlimited
-                      </td>
-                      <td class="p-2 border border-slate-600">
-                        5 Menit
-                      </td>
-                      <td class="p-2 border border-slate-600 font-bold">
-                        FREE
-                      </td>
-                    </tr>
-                    <tr class="bg-red-500 text-left">
-                      <td class="p-2 border border-slate-600">
-                        Unlimited
-                      </td>
-                      <td class="p-2 border border-slate-600">
-                        24 Jam
-                      </td>
-                      <td class="p-2 border border-slate-600">
-                        Rp. 5000
-                      </td>
-                    </tr>
-                    <tr class="bg-red-500 text-left">
-                      <td class="p-2 border border-slate-600">
-                        Unlimited
-                      </td>
-                      <td class="p-2 border border-slate-600">
-                        7 Hari
-                      </td>
-                      <td class="p-2 border border-slate-600">
-                        Rp. 15.000
-                      </td>
-                    </tr>
-                    <tr class="bg-red-500 text-left">
-                      <td class="p-2 border border-slate-600">
-                        Unlimited
-                      </td>
-                      <td class="p-2 border border-slate-600">
-                        30 Hari
-                      </td>
-                      <td class="p-2 border border-slate-600">
-                        Rp. 55.000
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
-          class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse"
-        >
-          <span
-            class="flex w-full rounded-md shadow-sm sm:ml-3 sm:w-auto"
-          >
-            <button
-              onclick="showNotif()"
-              type="button"
-              class="inline-flex justify-center w-full rounded-md border border-transparent px-4 py-2 bg-green-600 text-base leading-6 font-medium text-white shadow-sm hover:bg-green-500 focus:outline-none focus:border-green-700 focus:shadow-outline-green transition ease-in-out duration-150 sm:text-sm sm:leading-5"
-            >
-              Tutup
-            </button>
-          </span>
-        </div>
-      </div>
-    </div>
-  </div>
-<!-- End Notification -->
-
- 
-
-  
-
-<!-- Popup Member -->
-  <div id="member" class="fixed z-20 overflow-y-auto top-0 w-full left-0 hidden">
-    <div class="font-sans antialiased fixed inset-x-0 inset-0 flex items-center justify-center">
-      <div class="fixed inset-0 transition-opacity">
-        <div class="absolute inset-0 bg-gray-500 opacity-75" onclick="closeMember()"></div>
-      </div>
-
-      <div class="bg-white rounded-lg overflow-hidden shadow-xl transform transition-all max-w-sm w-full">
-        <div class="bg-red-500 py-3 text-left">
-          <h1 class="py-2 text-lg text-white leading-6 font-bold pl-7">
-            Login Member
-          </h1>
-        </div>
-        <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
-          <form
-                autocomplete="off"
-                name="loginMember"
-                action="$(link-login-only)"
-                method="post"
-                $(if chap-id) onSubmit="return memberLogin()" $(endif)
-              >
-                <input
-                  type="text"
-                  name="username"
-                  placeholder="Masukkan Username"
-                  class="bg-green-100 py-2 rounded-xl text-gray-600 px-4 focus:outline-none w-full leading-1 font-bold mb-4"
-                />
-                <div
-                  class="bg-green-100 rounded-xl flex items-center justify-between"
-                >
-                  <input
-                    type="password"
-                    id="passwordMember"
-                    name="password"
-                    placeholder="Masukkan Password"
-                    class="bg-transparent py-1 text-gray-600 px-4 focus:outline-none w-full leading-1 font-bold"
-                  />
-                  <button
-                    onclick="showPassword()"
-                    type="button"
-                    class="py-2 px-4 bg-green-800 text-white rounded-r-xl hover:bg-green-400 active:bg-green-800 disabled:opacity-50 inline-flex items-center focus:outline-none text-medium font-bold leading-1"
-                  >
-                    Lihat
-                  </button>
-                </div>
-                $(if error)
-                <span class="text-xs text-red-700">$(error)</span>
-                $(endif)
-                <div class="grid grid-cols-2 gap-4 mt-4 w-full">
-                  <button
-                    type="button"
-                    class="py-2 px-4 bg-red-500 text-white rounded hover:bg-red-700"
-                    onclick="showMember()"
-                  >
-                    <i class="fas fa-times"></i> Tutup
-                  </button>
-                  <button
-                    type="submit"
-                    class="py-2 px-4 bg-green-800 font-bold text-white rounded hover:bg-indigio-700"
-                  >
-                    Masuk
-                  </button>
-                </div>
-                <div class="text-center mt-4">
-                  <h4 class="text-md leading-4 font-medium">
-                    Memiliki Voucher?
+            <div>
+                <div class="absolute top-5 right-5">
                     <button
-                      onclick="loginWithVoucher()"
-                      type="button"
-                      class="text-green-800 font-bold"
+                        id="reload"
+                        class="relative inline-block mr-2 animate-pulse border rounded-lg p-2"
+                        onclick="alert()"
                     >
-                      Masukkan disini
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            class="feather feather-bell"
+                        >
+                            <path
+                                d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"
+                            ></path>
+                            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                        </svg>
+                        <div
+                            class="absolute top-1 right-1 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none transform translate-x-1/2 -translate-y-1/2 bg-red-600 rounded-full w-4 h-4"
+                        >
+                            X
+                        </div>
                     </button>
-                  </h4>
                 </div>
-              </form>
+                <h1 id="notif"></h1>
+            </div>
         </div>
-      </div>
-    </div>
-  </div>
 
-  <!-- JavaScript untuk mengatur interaksi -->
-  <script>
-    // Fungsi untuk menampilkan popup
-    function showMember() {
-      var memberPopup = document.getElementById("member");
-      memberPopup.classList.remove("hidden");
-    }
+        <!-- BOX BULANAN -->
+        <div
+            style="border-radius: 18px 18px 0px 0px"
+            class="border bg-gray-200 -mt-4 md:mt-0"
+        >
+            <div class="w-full mx-auto text-center mt-6 mb-2 px-4">
+                <marquee class="text-medium font-bold tracking-wide"
+                    >PROMO 💥 Biaya Pemasangan RUMAHAN
+                    <span class="text-2xl text-red-600">Rp 150,000.-</span>
+                </marquee>
+            </div>
 
-    // Fungsi untuk menutup popup
-    function closeMember() {
-      var memberPopup = document.getElementById("member");
-      memberPopup.classList.add("hidden");
-    }
-
-    // Fungsi untuk melihat password
-    function showPassword() {
-      var passwordField = document.getElementById("passwordMember");
-      if (passwordField.type === "password") {
-        passwordField.type = "text";
-      } else {
-        passwordField.type = "password";
-      }
-    }
-
-    // Fungsi login dengan voucher (opsional)
-    function memberLogin() {
-                  document.loginMember.username.value = document.login.username.value;
-                  document.loginMember.password.value = hexMD5("$(chap-id)" + document.login.password.value +"$(chap-challenge)");
-                  document.loginMember.submit();
-                  return false;
-                }
-  </script>
-
-
-
-<!-- Cara Login -->
-  <div
-    class="fixed z-20 overflow-y-auto top-0 w-full left-0 hidden"
-    id="caraLogin"
-  >
-    <div
-      class="font-sans antialiased fixed inset-x-0 px-4 pb-4 inset-0 flex items-center justify-center"
-    >
-      <div
-        x-transition:enter="ease-out duration-300"
-        x-transition:enter-start="opacity-0"
-        x-transition:enter-end="opacity-100"
-        x-transition:leave="ease-in duration-200"
-        x-transition:leave-start="opacity-100"
-        x-transition:leave-end="opacity-0"
-        class="fixed inset-0 transition-opacity"
-      >
-        <div class="absolute inset-0 bg-gray-500 opacity-75"></div>
-      </div>
-
-      <div
-        class="bg-white rounded-lg overflow-hidden shadow-xl transform transition-all md:max-w-sm w-full"
-      >
-        <div class="bg-white px-4 pt-5 pb-4 p-6 pb-4">
-          <div class="flex items-center md:items-start flex-col md:flex-row">
             <div
-              class="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-green-100 mx-0 h-10 w-10"
+                class="flex space-x-3 px-3 overflow-x-auto md:grig md:grid-cols-3 md:gap-3 md:space-x-0"
             >
-              <svg
-                class="h-6 w-6 text-green-600"
-                stroke="currentColor"
-                fill="none"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
-                />
-              </svg>
+                <div
+                    class="text-white box tracking-wide p-2 shadow-lg w-box h-box md:w-full rounded-lg"
+                >
+                    <h2
+                        class="mx-auto text-center font-bold bg-red-600 rounded-bl-lg rounded-tr-lg"
+                    >
+                        Paling Murah
+                    </h2>
+                    <div class="flex flex-row justify-center mx-7 my-2">
+                        <div
+                            class="w-[75px] h-[75px] bg-red-600 rounded-tl-lg rounded-br-lg p-2 text-center mr-2"
+                        >
+                            <p class="text-3xl font-bold">10</p>
+                            <p class="">Mbps</p>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-xl">Paket Bulanan</h3>
+                            <p class="text-md md:text-xl">kecepatan Normal</p>
+                        </div>
+                    </div>
+                    <div class="text-white mx-7 text-center">
+                        <h3 class="font-semibold my-2">
+                            Rp
+                            <span class="text-2xl font-bold">150,000,-</span>
+                            /bulan
+                        </h3>
+                        <button
+                            onclick="alert()"
+                            type="button"
+                            class="bg-red-700 w-full rounded-lg shadow-lg font-bold py-1 text-sm"
+                        >
+                            Berlangganan Sekarang
+                        </button>
+                    </div>
+                </div>
+                <div
+                    class="box tracking-wide p-2 shadow-lg w-box h-box md:w-full rounded-lg"
+                >
+                    <h2
+                        class="mx-auto text-center font-bold bg-gray-400 rounded-bl-lg rounded-tr-lg"
+                    >
+                        Paket Silver
+                    </h2>
+                    <div class="flex flex-row justify-center mx-7 my-2">
+                        <div
+                            class="w-[75px] h-[75px] bg-gray-400 rounded-tl-lg rounded-br-lg p-2 text-center mr-2"
+                        >
+                            <p class="text-3xl font-bold">15</p>
+                            <p class="">Mbps</p>
+                        </div>
+                        <div class="text-white">
+                            <h3 class="font-semibold text-xl">Paket Bulanan</h3>
+                            <p class="text-md md:text-xl">kecepatan stabil</p>
+                        </div>
+                    </div>
+                    <div class="text-white mx-7 text-center">
+                        <h3 class="font-semibold my-2">
+                            Rp
+                            <span class="text-2xl font-bold">220,000,-</span>
+                            /bulan
+                        </h3>
+                        <button
+                            onclick="alert()"
+                            class="bg-red-700 w-full rounded-lg shadow-lg font-bold py-1 text-sm"
+                        >
+                            Berlangganan Sekarang
+                        </button>
+                    </div>
+                </div>
+                <div
+                    class="box tracking-wide p-2 shadow-lg w-box h-box md:w-full rounded-lg"
+                >
+                    <h2
+                        class="text-yellow-400 mx-auto text-center text-red-700 font-bold bg-blue-400 rounded-bl-lg rounded-tr-lg"
+                    >
+                        Paket Gold
+                    </h2>
+                    <div
+                        class="text-white flex flex-row justify-center mx-7 my-2"
+                    >
+                        <div
+                            class="w-[75px] h-[75px] bg-blue-400 rounded-tl-lg rounded-br-lg p-2 text-center text-yellow-400 mr-2"
+                        >
+                            <p class="text-3xl font-bold">20</p>
+                            <p class="">Mbps</p>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-xl">Paket Bulanan</h3>
+                            <p class="text-md md:text-xl">
+                                kecepatan Super lancar
+                            </p>
+                        </div>
+                    </div>
+                    <div class="text-white mx-7 text-center">
+                        <h3 class="font-semibold my-2">
+                            Rp
+                            <span class="text-2xl font-bold">270,000,-</span>
+                            /bulan
+                        </h3>
+                        <button
+                            onclick="alert()"
+                            class="bg-red-700 w-full rounded-lg shadow-lg font-bold py-1 text-sm"
+                        >
+                            Berlangganan Sekarang
+                        </button>
+                    </div>
+                </div>
             </div>
-            <div class="mt-3 mt-0 ml-4 text-left">
-              <h3 class="text-lg font-medium text-gray-900">Cara Login</h3>
-              <div class="mt-2 text-sm leading-5 w-full">
-                <p>
-                  Pastikan kamu sudah membeli
-                  <b>voucher</b> atau sudah menjadi
-                  <b>member</b>
-                </p>
-                <h4 class="text-md font-bold my-2">
-                  Sudah memiliki voucher?
-                </h4>
-                <p>
-                  Masukkan
-                  <b class="text-green-500"><a href="#voucher">voucher</a></b>
-                  yang kamu miliki lalu klik
-                  <b>masuk</b>
-                </p>
-                <h4 class="text-md font-bold my-2">Sudah menjadi member?</h4>
-                <ol class="list-decimal ml-4">
-                  <li>
-                    Klik
-                    <b>Login Member</b>
-                  </li>
-                  <li>
-                    Masukkan
-                    <b>username</b> dan <b>password</b> yang kamu miliki lalu
-                    klik
-                    <b>masuk</b>
-                  </li>
-                </ol>
-              </div>
+
+            <div class="w-full mx-auto text-center my-2">
+                <button
+                    onclick="alert()"
+                    class="py-2 px-5 cursor-pointer shadow-lg font-semibold border border-red-700 hover:border-red-800 rounded-full text-red-700 hover:text-red-800"
+                >
+                    Mau
+                </button>
             </div>
-          </div>
         </div>
-        <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
-          <span class="flex w-full rounded-md shadow-sm sm:ml-3 sm:w-auto">
-            <button
-              onclick="caraLogin()"
-              type="button"
-              class="inline-flex justify-center w-full rounded-md border border-transparent px-4 py-2 bg-red-500 text-base leading-6 font-medium text-white shadow-sm hover:bg-green-500 focus:outline-none focus:border-green-700 focus:shadow-outline-green transition ease-in-out duration-150 sm:text-sm sm:leading-5"
+        <!-- END BOX BULANAN -->
+
+        <!-- Sosial media -->
+        <div class="mt-10 mx-2 py-2 mb-40 border">
+            <h1 class="font-bold tracking-wide text-md text-center">
+                Untuk permintaan Pasang Baru ( PSB ) atau Voucher berlangganan,
+                bisa hubungi kontak kami dibawah ini.
+            </h1>
+            <div class="flex justify-around my-4">
+                <div class="text-center">
+                    <h1 class="font-serif tracking-wide text-sm">
+                        Butuh bantuan?<br />
+                        Hubungi kami
+                    </h1>
+                    <div class="flex">
+                        <img
+                            class="w-8 h-8"
+                            src="png/facebook.png"
+                            alt="facebook"
+                        />
+                        <img
+                            class="w-8 h-8"
+                            src="png/whatsapp.png"
+                            alt="whatsapp"
+                        />
+                        <img
+                            class="w-8 h-8"
+                            src="png/telegram.png"
+                            alt="telegram"
+                        />
+                    </div>
+                    <a class="font-bold tracking-wide text-sm" href="#"
+                        >0822-1345-2856</a
+                    >
+                </div>
+                <div class="flex flex-col font-serif text-sm">
+                    <a href="#">Syarat dan Ketentuan</a>
+                    <a href="#">Harga Promo</a>
+                    <a href="#">Registrasi</a>
+                </div>
+            </div>
+
+            <footer class="text-xs text-center mt-2">
+                &copy;<span id="thn"></span>
+                <a href="https://indihome-area.com" class="font-bold"
+                    >contoh.net |</a
+                >
+                All rights reserved
+            </footer>
+            <script type="text/javascript" charset="utf-8">
+                var tahun = new Date().getFullYear();
+                document.getElementById("thn").innerHTML = tahun;
+            </script>
+        </div>
+        <!-- End Sosial media -->
+
+        <!-- MENU BAWAH-->
+        <section
+            id="menu"
+            class="fother fixed bottom-0 left-0 right-0 mx-auto text-center text-white z-20 md:hidden"
+        >
+            <div class="grid grid-cols-3 divide-x-2 divide-gray-300 gap-2 p-2">
+                <div class="flex flex-col">
+                    <div class="mx-2">
+                        <div
+                            class="flex flex-row w-full justify-start items-center text-amber-800"
+                        ></div>
+                        <button onclick="showMember()">
+                            <div class="h-10 w-10">
+                                <img src="png/group.png" alt="" />
+                            </div>
+
+                            <p
+                                class="text-xs -leading-1 font-medium text-center tracking-tight text-white"
+                            >
+                                Login <br />
+                                member
+                            </p>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="flex flex-col mt-2">
+                    <div class="spinner mx-auto rounded-full w-16 h-16">
+                        <button
+                            onclick="myFunction()"
+                            class="rounded-full w-16 h-16"
+                        ></button>
+                    </div>
+                </div>
+
+                <div class="flex flex-col">
+                    <div class="mx-2">
+                        <div
+                            class="flex flex-row w-full justify-start items-center text-amber-800"
+                        ></div>
+                        <button onclick="showVoucher()">
+                            <div class="h-10 w-10">
+                                <img src="png/unlocked.png" alt="" />
+                            </div>
+
+                            <p
+                                class="text-xs -leading-1 font-medium text-center tracking-tight text-white"
+                            >
+                                Login <br />
+                                voucher
+                            </p>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- AHIR MENU BAWAH-->
+
+        <!-- Member -->
+        <div
+            class="fixed z-30 overflow-y-auto top-0 w-full left-0 hidden"
+            id="member"
+        >
+            <div
+                class="font-sans antialiased fixed inset-x-0 inset-0 flex items-center justify-center"
             >
-              Tutup
-            </button>
-          </span>
+                <div
+                    x-transition:enter="ease-out duration-300"
+                    x-transition:enter-start="opacity-0"
+                    x-transition:enter-end="opacity-100"
+                    x-transition:leave="ease-in duration-200"
+                    x-transition:leave-start="opacity-100"
+                    x-transition:leave-end="opacity-0"
+                    class="fixed inset-0 transition-opacity"
+                >
+                    <div class="absolute inset-0 bg-gray-500 opacity-75"></div>
+                </div>
+                <div
+                    x-transition:enter="ease-out duration-300"
+                    x-transition:enter-start="opacity-0 translate-y-4 translate-y-0 scale-95"
+                    x-transition:enter-end="opacity-100 translate-y-0 scale-100"
+                    x-transition:leave="ease-in duration-200"
+                    x-transition:leave-start="opacity-100 translate-y-0 scale-100"
+                    x-transition:leave-end="opacity-0 translate-y-4 translate-y-0 scale-95"
+                    class="bg-white rounded-lg overflow-hidden shadow-xl transform transition-all max-w-sm w-full"
+                >
+                    <div id="dark-mode" class="bg-white">
+                        <div class="bg-green-600 py-3 text-left">
+                            <h1
+                                class="py-2 text-white text-lg leading-6 font-bold px-4"
+                            >
+                                Login Member
+                            </h1>
+                        </div>
+                        <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                            <form
+                                autocomplete="off"
+                                name="loginMember"
+                                action="$(link-login-only)"
+                                method="post"
+                                $(if
+                                chap-id)
+                                onSubmit="return memberLogin()"
+                                $(endif)
+                            >
+                                <input
+                                    type="text"
+                                    name="username"
+                                    required
+                                    placeholder="Masukkan Username"
+                                    id="kodeMember"
+                                    class="bg-green-100 py-2 rounded-xl text-gray-600 px-4 focus:outline-none w-full leading-1 font-bold mb-4"
+                                />
+                                <div
+                                    class="bg-green-100 rounded-xl flex items-center justify-between"
+                                >
+                                    <input
+                                        type="password"
+                                        id="passwordMember"
+                                        name="password"
+                                        placeholder="Masukkan Password"
+                                        class="bg-transparent py-1 text-gray-600 px-4 focus:outline-none w-full leading-1 font-bold"
+                                    />
+                                    <button
+                                        onclick="showPassword()"
+                                        type="button"
+                                        class="py-2 px-4 bg-green-800 text-white rounded-r-xl hover:bg-green-400 active:bg-green-800 disabled:opacity-50 inline-flex items-center focus:outline-none text-medium font-bold leading-1"
+                                    >
+                                        Lihat
+                                    </button>
+                                </div>
+                                $(if error)
+                                <span class="text-xs text-red-700"
+                                    >$(error)</span
+                                >
+                                $(endif)
+                                <div class="grid grid-cols-2 gap-4 mt-4 w-full">
+                                    <button
+                                        type="button"
+                                        class="py-2 px-4 bg-red-500 text-white rounded hover:bg-red-700"
+                                        onclick="showMember()"
+                                    >
+                                        <i class="fas fa-times"></i> Tutup
+                                    </button>
+                                    <button
+                                        type="submit"
+                                        class="py-2 px-4 bg-green-800 font-bold text-white rounded hover:bg-indigio-700"
+                                    >
+                                        Masuk
+                                    </button>
+                                </div>
+                                <div class="text-center mt-4">
+                                    <h4
+                                        class="text-md text-black leading-4 font-medium"
+                                    >
+                                        Memiliki Voucher?
+                                        <button
+                                            onclick="loginWithVoucher()"
+                                            type="button"
+                                            class="text-green-800 font-bold"
+                                        >
+                                            Masukkan disini
+                                        </button>
+                                    </h4>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
+        <!-- Member -->
 
-        
-  </div>
-<!-- End Cara Login -->
+        <!-- Voucher -->
+        <div
+            class="fixed z-30 overflow-y-auto top-0 w-full left-0 hidden"
+            id="voucher"
+        >
+            <div
+                class="font-sans antialiased fixed inset-x-0 inset-0 flex items-center justify-center"
+            >
+                <div
+                    x-transition:enter="ease-out duration-300"
+                    x-transition:enter-start="opacity-0"
+                    x-transition:enter-end="opacity-100"
+                    x-transition:leave="ease-in duration-200"
+                    x-transition:leave-start="opacity-100"
+                    x-transition:leave-end="opacity-0"
+                    class="fixed inset-0 transition-opacity"
+                >
+                    <div class="absolute inset-0 bg-gray-500 opacity-75"></div>
+                </div>
+                <div
+                    x-transition:enter="ease-out duration-300"
+                    x-transition:enter-start="opacity-0 translate-y-4 translate-y-0 scale-95"
+                    x-transition:enter-end="opacity-100 translate-y-0 scale-100"
+                    x-transition:leave="ease-in duration-200"
+                    x-transition:leave-start="opacity-100 translate-y-0 scale-100"
+                    x-transition:leave-end="opacity-0 translate-y-4 translate-y-0 scale-95"
+                    class="bg-white rounded-lg overflow-hidden shadow-xl transform transition-all max-w-sm w-full"
+                >
+                    <div class="bg-white">
+                        <div class="bg-green-600 py-3 text-left">
+                            <h1
+                                class="py-2 text-lg text-white leading-6 font-bold px-4"
+                            >
+                                Login Voucher
+                            </h1>
+                        </div>
+                        <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                            <!-- Form Voucher -->
+                            <div class="py-6 mx-4 rounded-lg">
+                                $(if chap-id)
+                                <form
+                                    autocomplete="off"
+                                    name="loginvoucher"
+                                    action="$(link-login-only)"
+                                    method="post"
+                                    $(if
+                                    chap-id)
+                                    onSubmit="return doLogin()"
+                                    $(endif)
+                                >
+                                    <div
+                                        class="bg-white rounded-xl flex items-center justify-between"
+                                    >
+                                        <input
+                                            type="text"
+                                            name="username"
+                                            required
+                                            placeholder="Masukkan Voucher"
+                                            id="kodeVoucher"
+                                            class="bg-green-100 py-2 rounded-lg text-gray-600 px-4 focus:outline-2 focus:outline-green-500 w-full leading-1 font-bold"
+                                        />
+                                        <input
+                                            type="hidden"
+                                            name="password"
+                                            id="password"
+                                        />
+                                    </div>
+                                    $(if error)
+                                    <span class="text-sm text-red-800"
+                                        >$(error)</span
+                                    >
+                                    $(endif)
+                                    <div
+                                        class="grid grid-cols-2 gap-4 mt-4 w-full"
+                                    >
+                                        <button
+                                            type="button"
+                                            class="py-2 px-4 bg-red-500 text-white rounded hover:bg-red-700"
+                                            onclick="showVoucher()"
+                                        >
+                                            <i class="fas fa-times"></i> Tutup
+                                        </button>
+                                        <button
+                                            type="submit"
+                                            class="py-2 px-4 bg-green-800 font-bold text-white rounded hover:bg-indigio-700"
+                                        >
+                                            Masuk
+                                        </button>
+                                    </div>
+                                    <div class="text-center mt-4">
+                                        <h4
+                                            class="text-md text-black leading-4 font-medium"
+                                        >
+                                            Sudah menjadi Member?
+                                            <button
+                                                onclick="loginWithMember()"
+                                                type="button"
+                                                class="text-green-800 font-bold"
+                                            >
+                                                Masukkan disini
+                                            </button>
+                                        </h4>
+                                    </div>
+                                </form>
 
+                                $(endif)
+                            </div>
+                            <!-- End Form Voucher -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Voucher -->
 
+        <!-- Notification -->
+        <div
+            class="fixed z-20 overflow-y-auto top-0 w-full left-0 hidden"
+            id="notification"
+        >
+            <div
+                class="font-sans antialiased fixed inset-x-0 px-4 pb-4 inset-0 flex items-center justify-center"
+            >
+                <div
+                    x-transition:enter="ease-out duration-300"
+                    x-transition:enter-start="opacity-0"
+                    x-transition:enter-end="opacity-100"
+                    x-transition:leave="ease-in duration-200"
+                    x-transition:leave-start="opacity-100"
+                    x-transition:leave-end="opacity-0"
+                    class="fixed inset-0 transition-opacity"
+                >
+                    <div class="absolute inset-0 bg-gray-500 opacity-75"></div>
+                </div>
 
+                <div
+                    class="bg-white rounded-lg overflow-hidden shadow-xl transform transition-all md:max-w-sm w-full"
+                >
+                    <div class="bg-white px-4 pt-5 pb-4 p-6 pb-4">
+                        <div
+                            class="flex items-center md:items-start flex-col md:flex-row"
+                        >
+                            <div
+                                class="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-green-100 mx-0 h-10 w-10"
+                            >
+                                <svg
+                                    class="h-6 w-6 text-green-600"
+                                    stroke="currentColor"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
+                                    />
+                                </svg>
+                            </div>
+                            <div class="mt-3 mt-0 ml-4 text-left">
+                                <h3
+                                    class="text-lg font-medium text-gray-900 text-center"
+                                >
+                                    Harga Paket
+                                </h3>
+                                <div
+                                    class="mt-2 text-sm font-medium leading-5 text-white w-full"
+                                >
+                                    <table class="border border-slate-500">
+                                        <thead>
+                                            <tr class="bg-gray-800 text-center">
+                                                <th
+                                                    class="p-2 border border-slate-600"
+                                                >
+                                                    Kuota
+                                                </th>
+                                                <th
+                                                    class="p-2 border border-slate-600"
+                                                >
+                                                    Masa Aktif
+                                                </th>
+                                                <th
+                                                    class="p-2 border border-slate-600"
+                                                >
+                                                    Harga
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="bg-green-500 text-left">
+                                                <td
+                                                    class="p-2 border border-slate-600"
+                                                >
+                                                    Unlimited
+                                                </td>
+                                                <td
+                                                    class="p-2 border border-slate-600"
+                                                >
+                                                    5 Menit
+                                                </td>
+                                                <td
+                                                    class="p-2 border border-slate-600 font-bold"
+                                                >
+                                                    FREE
+                                                </td>
+                                            </tr>
+                                            <tr class="bg-green-500 text-left">
+                                                <td
+                                                    class="p-2 border border-slate-600"
+                                                >
+                                                    Unlimited
+                                                </td>
+                                                <td
+                                                    class="p-2 border border-slate-600"
+                                                >
+                                                    24 Jam
+                                                </td>
+                                                <td
+                                                    class="p-2 border border-slate-600"
+                                                >
+                                                    Rp. 5000
+                                                </td>
+                                            </tr>
+                                            <tr class="bg-green-500 text-left">
+                                                <td
+                                                    class="p-2 border border-slate-600"
+                                                >
+                                                    Unlimited
+                                                </td>
+                                                <td
+                                                    class="p-2 border border-slate-600"
+                                                >
+                                                    7 Hari
+                                                </td>
+                                                <td
+                                                    class="p-2 border border-slate-600"
+                                                >
+                                                    Rp. 20.000
+                                                </td>
+                                            </tr>
+                                            <tr class="bg-green-500 text-left">
+                                                <td
+                                                    class="p-2 border border-slate-600"
+                                                >
+                                                    Unlimited
+                                                </td>
+                                                <td
+                                                    class="p-2 border border-slate-600"
+                                                >
+                                                    30 Hari
+                                                </td>
+                                                <td
+                                                    class="p-2 border border-slate-600"
+                                                >
+                                                    Rp. 60.000
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse"
+                    >
+                        <span
+                            class="flex w-full rounded-md shadow-sm sm:ml-3 sm:w-auto"
+                        >
+                            <button
+                                onclick="showNotif()"
+                                type="button"
+                                class="inline-flex justify-center w-full rounded-md border border-transparent px-4 py-2 bg-green-600 text-base leading-6 font-medium text-white shadow-sm hover:bg-green-500 focus:outline-none focus:border-green-700 focus:shadow-outline-green transition ease-in-out duration-150 sm:text-sm sm:leading-5"
+                            >
+                                Tutup
+                            </button>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Notification -->
 
-    
-    <script type="text/javascript" src="login_js/jquery.js"></script>
-    <script type="text/javascript" src="login_js/owl.carousel.min.js"></script>
+        <!-- FUNCTION -->
+        <script
+            src="login_js/main.js"
+            type="text/javascript"
+            charset="utf-8"
+        ></script>
+        <script
+            src="login_js/datehijri.js"
+            type="text/javascript"
+            charset="utf-8"
+        ></script>
+        <script
+            src="login_js/md5.js"
+            type="application/javascript"
+            charset="utf-8"
+        ></script>
+        <script
+            src="login_js/jquery.js"
+            type="text/javascript"
+            charset="utf-8"
+        ></script>
+        <script type="text/javascript" charset="utf-8">
+            document.getElementById("isName").innerHTML =
+                window.location.hostname;
+        </script>
 
-    <script type="text/javascript" src="login_js/main.js"></script>
-    <script type="text/javascript" src="login_js/datehijri.js"></script>
-    <script>
-      window.MSInputMethodContext &&
-        document.documentMode &&
-        document.write(
-          '<script src="login_js/ie11CustomProperties.min.js"><\/script>'
-        );
-    </script>
-    <script>
-      $("#owl-carousel").owlCarousel({
-        items: 1,
-        loop: true,
-        margin: 10,
-        autoplay: true,
-        autoplayTimeout: 3000,
-        autoplayHoverPause: true,
-        dots: false,
-      });
-      $("#menu-carousel").owlCarousel({
-        items: 5,
-        loop: true,
-        margin: 10,
-        autoplay: true,
-        autoplayTimeout: 3000,
-        autoplayHoverPause: true,
-        dots: false,
-      });
-      $("#login-carousel").owlCarousel({
-        items: 5,
-        loop: true,
-        margin: 10,
-        autoplay: true,
-        autoplayTimeout: 3000,
-        autoplayHoverPause: true,
-        dots: false,
-      });
-    </script>
-    <script type="text/javascript">
-      document.getElementById("title").innerHTML =
-        window.location.hostname + " > status";
-    </script>
-    <script>
-if ("serviceWorker" in navigator) {
-    navigator.serviceWorker.register("/tamplat-voucher/sw.js")
-    .then(reg => console.log("Service Worker Registered:", reg.scope))
-    .catch(err => console.log("Service Worker Registration Failed:", err));
-}
-    </script>
-    
-    <script type="text/javascript" charset="utf-8">
-      let deferredPrompt;
- window.addEventListener("beforeinstallprompt", (event) => {
-  event.preventDefault();
-  deferredPrompt = event;
-
-  // Tampilkan tombol install manual
-  const installButton = document.getElementById("install-button");
-  if (installButton) {
-    installButton.style.display = "block";
-    installButton.addEventListener("click", () => {
-      deferredPrompt.prompt();
-      deferredPrompt.userChoice.then((choiceResult) => {
-        if (choiceResult.outcome === "accepted") {
-          console.log("User accepted the install prompt");
-        } else {
-          console.log("User dismissed the install prompt");
-        }
-        deferredPrompt = null;
-      });
-    });
-  }
-});   
-    </script>
-
-    
-            
-    
-  </body>
+        <!-- AHIR FUNCTION -->
+    </body>
 </html>
